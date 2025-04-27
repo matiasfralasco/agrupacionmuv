@@ -1,0 +1,456 @@
+:root {
+    --color-azul-claro: #a3d1ff;
+    --color-azul: #1e3a8a;
+    --color-azul-oscuro: #0f172a;
+    --color-fondo: #f0f8ff;
+    --color-texto: #1e293b;
+    --color-acento: #5cb85c;
+    --transicion-normal: 0.3s ease-in-out;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color var(--transicion-normal), color var(--transicion-normal);
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, var(--color-azul), var(--color-azul-claro));
+    padding: 30px 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background var(--transicion-normal);
+}
+
+header h1 {
+    margin: 15px 0 0;
+    font-size: 2.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    transition: color var(--transicion-normal);
+}
+
+header img {
+    height: 200px;
+    margin-bottom: 40px;
+    transition: transform var(--transicion-normal);
+}
+
+header img:hover {
+    transform: scale(1.05);
+}
+
+.correo-header {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: white;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: color var(--transicion-normal);
+}
+
+.correo-header:hover {
+    color: var(--color-azul-claro);
+}
+
+.correo-texto {
+    text-decoration: underline;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: var(--color-azul-oscuro);
+    color: white;
+    padding: 15px 20px;
+    z-index: 100;
+    transition: background-color var(--transicion-normal), box-shadow var(--transicion-normal);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color var(--transicion-normal);
+}
+
+nav a:hover {
+    color: var(--color-azul-claro);
+}
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Styles */
+section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    color: var(--color-azul);
+    font-size: 2rem; /* Ajusté a un valor más consistente */
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--color-azul-claro);
+    padding-bottom: 8px;
+    transition: color var(--transicion-normal), border-color var(--transicion-normal);
+}
+
+/* Footer Style */
+footer {
+    background-color: var(--color-azul-oscuro);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 70px;
+    font-size: 0.9rem;
+    transition: background-color var(--transicion-normal), color var(--transicion-normal);
+}
+
+/* Separator */
+hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, var(--color-azul-claro), var(--color-azul));
+    margin: 40px auto;
+    width: 80%;
+    border-radius: 5px;
+}
+
+/* Recursos Section Styles */
+.recursos-section h2 {
+    font-size: 2rem; /* Hereda el tamaño del h2 general de la sección */
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--color-azul-claro);
+    padding-bottom: 10px;
+}
+
+.recursos-item {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.recursos-item h3 {
+    color: var(--color-azul-oscuro);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.recursos-item p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.recursos-item ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.recursos-item li {
+    margin-bottom: 8px;
+}
+
+/* Links within Recursos Section */
+.recursos-section a {
+    color: var(--color-azul); /* Establece el color azul por defecto */
+    text-decoration: none;
+    transition: color var(--transicion-normal);
+}
+
+.recursos-section a:hover {
+    text-decoration: underline;
+    color: var(--color-azul-claro);
+}
+
+/* Reglamento Item Styles */
+.reglamento-item,
+.servicio-deportivo-item,
+.materia-anio-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.reglamento-item h4,
+.servicio-deportivo-item h4,
+.materia-anio-item h4 {
+    color: var(--color-azul-oscuro);
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Arrow Icon Style */
+.arrow-icon {
+    font-size: 0.8em;
+    transition: transform 0.3s ease-in-out;
+}
+
+.reglamento-item h4.active .arrow-icon,
+.servicio-deportivo-item h4.active .arrow-icon,
+.materia-anio-item h4.active .arrow-icon {
+    transform: rotate(180deg);
+}
+
+/* Reglamento Content Styles */
+.reglamento-contenido,
+.servicio-deportivo-contenido,
+.materia-anio-contenido {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+    padding-left: 20px;
+}
+
+.reglamento-contenido ul {
+    padding-left: 0;
+    margin-bottom: 10px;
+    list-style: disc;
+}
+
+.reglamento-contenido li {
+    margin-bottom: 5px;
+}
+
+/* Links within Reglamento Content */
+.reglamento-contenido a,
+.materia-anio-contenido a {
+    color: var(--color-azul);
+    text-decoration: none;
+    transition: color var(--transicion-normal);
+}
+
+.reglamento-contenido a:hover,
+.materia-anio-contenido a:hover {
+    text-decoration: underline;
+    color: var(--color-azul-claro);
+}
+
+/* Servicio Deportivo Content Style */
+.servicio-deportivo-contenido {
+    padding: 0;
+    text-align: center;
+}
+
+.servicio-deportivo-contenido img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
+}
+.imagen-ampliable {
+    display: inline-block; /* Para que ocupe el tamaño de la imagen */
+    cursor: pointer; /* Indica que es clickeable */
+}
+
+/* Estilos para el overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro y semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.overlay-imagen-contenedor {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+}
+
+.overlay-imagen {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Asegura que la imagen se ajuste sin recortar */
+}
+
+.overlay-cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.overlay-cerrar:hover {
+    opacity: 1;
+}
+
+/* Specific WhatsApp Link Styling (Simplified) */
+.recursos-section a:contains(WhatsApp),
+.reglamento-contenido a:contains(WhatsApp) {
+    color: inherit; /* O tu color de texto por defecto */
+}
+
+/* Materias por Año Section Styles */
+.materias-por-anio-section h2 {
+    font-size: 2rem; /* Hereda del h2 general de la sección */
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--color-azul-claro);
+    padding-bottom: 10px;
+}
+
+
+
+/* Links within Materias por Año Content */
+/* (Los estilos ya están definidos en .reglamento-contenido a) */
+
+/* Arrow Icon (General) - Already defined */
+/* .arrow-icon { ... } */
+
+/* Active Arrow Icon (General) - Already defined */
+/* .arrow-icon.active { ... } */
+
+/* Responsive: Pantallas hasta 768px (tablets y móviles) */
+@media (max-width: 768px) {
+    header img {
+        height: 140px;
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .correo-header {
+        font-size: 0.95rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    section {
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .recursos-item h3 {
+        font-size: 1.3rem;
+    }
+
+    .reglamento-item h4,
+    .servicio-deportivo-item h4,
+    .materia-anio-item h4 {
+        font-size: 1rem;
+    }
+
+    .reglamento-contenido,
+    .materia-anio-contenido {
+        font-size: 0.95rem;
+        padding-left: 10px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 20px 10px;
+    }
+
+    hr {
+        width: 90%;
+    }
+}
+
+/* Responsive: Pantallas muy pequeñas (hasta 480px, móviles chicos) */
+@media (max-width: 480px) {
+    header {
+        padding: 20px 10px;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    .recursos-item {
+        padding: 10px;
+    }
+
+    .recursos-item p,
+    .recursos-item li {
+        font-size: 0.95rem;
+    }
+
+    .arrow-icon {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,531 @@
+:root {
+    --color-azul-claro: #a3d1ff;
+    --color-azul: #1e3a8a;
+    --color-azul-oscuro: #0f172a;
+    --color-fondo: #f0f8ff;
+    --color-texto: #1e293b;
+    --color-acento: #5cb85c;
+    --transicion-normal: 0.3s ease-in-out;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color var(--transicion-normal), color var(--transicion-normal);
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, var(--color-azul), var(--color-azul-claro));
+    padding: 30px 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background var(--transicion-normal);
+}
+
+header h1 {
+    margin: 15px 0 0;
+    font-size: 2.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    transition: color var(--transicion-normal);
+}
+
+header img {
+    height: 200px;
+    margin-bottom: 40px;
+    transition: transform var(--transicion-normal);
+}
+
+header img:hover {
+    transform: scale(1.05);
+}
+
+.correo-header {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: white;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: color var(--transicion-normal);
+}
+
+.correo-header:hover {
+    color: var(--color-azul-claro);
+}
+
+.correo-texto {
+    text-decoration: underline;
+}
+
+/* Navigation Styles */
+nav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav#mainNav {
+    background-color: var(--color-azul-oscuro);
+    color: white;
+    padding: 15px 20px;
+    z-index: 100;
+    transition: background-color var(--transicion-normal), box-shadow var(--transicion-normal);
+}
+
+nav#mainNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav#mainNav a {
+    color: white;
+    text-decoration: none;
+    transition: color var(--transicion-normal);
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espacio para el icono */
+}
+
+nav#mainNav a:hover {
+    color: var(--color-azul-claro);
+}
+
+/* Section Styles */
+main.novedades-eventos-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.novedades h2,
+.eventos-proximos h2 {
+    color: var(--color-azul);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--color-azul-claro);
+    padding-bottom: 8px;
+    transition: color var(--transicion-normal), border-color var(--transicion-normal);
+}
+
+/* Estilos para la sección de Novedades (Mosaico) */
+.novedades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.novedades-grid .novedad-item-link {
+    display: block; /* Hace que el enlace ocupe todo el espacio del grid item */
+    text-decoration: none; /* Opcional: elimina el subrayado predeterminado del enlace */
+    color: inherit; /* Opcional: hereda el color del texto del .novedad-item */
+    height: 100%; /* Ocupa toda la altura del grid item */
+}
+
+.novedades-grid .novedad-item {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: left;
+    background-color: white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative; /* Para posicionar la fecha y el título */
+    overflow: hidden; /* Asegura que los elementos posicionados absolutamente no se desborden */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.novedades-grid .novedad-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.novedades-grid .novedad-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 0; /* Eliminamos el margen inferior anterior */
+    border-radius: 6px 6px 0 0;
+    object-fit: cover;
+}
+
+.novedades-grid .novedad-item h3 {
+    color: var(--color-azul-oscuro);
+    font-size: 1rem; /* Reducimos un poco el tamaño para que quepa mejor */
+    margin: 0; /* Eliminamos márgenes predeterminados */
+    padding: 10px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    box-sizing: border-box; /* Incluye el padding en el ancho */
+}
+
+.novedades-grid .novedad-item .fecha-novedad {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 8px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+/* Estilos para la sección de Eventos (Carrusel) */
+.eventos-proximos .carousel-container {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.eventos-proximos .carousel-wrapper {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.evento-item {
+    flex: 0 0 auto;
+    width: calc(100% - 40px); /* Ajusta el ancho para dejar espacio para los botones */
+    margin-right: 20px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animación hover para eventos */
+}
+
+.evento-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.eventos-proximos .carousel-wrapper > *:last-child {
+    margin-right: 0;
+}
+
+.eventos-proximos .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-azul);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.eventos-proximos .carousel-control:hover {
+    opacity: 1;
+}
+
+.eventos-proximos .carousel-control.prev {
+    left: 10px;
+}
+
+.eventos-proximos .carousel-control.next {
+    right: 10px;
+}
+
+.evento-item h3 {
+    color: var(--color-azul-oscuro);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.evento-item p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.evento-item a {
+    color: var(--color-azul);
+    text-decoration: none;
+    transition: color var(--transicion-normal), text-decoration var(--transicion-normal);
+}
+
+.evento-item a:hover {
+    text-decoration: underline;
+    color: var(--color-azul-claro);
+}
+
+/* Footer Style */
+footer {
+    background-color: var(--color-azul-oscuro);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 70px;
+    font-size: 0.9rem;
+    transition: background-color var(--transicion-normal), color var(--transicion-normal);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    main.novedades-eventos-section {
+        padding: 0 15px;
+        margin-top: 40px;
+    }
+
+    .novedades h2,
+    .eventos-proximos h2 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+        padding-bottom: 6px;
+    }
+
+    .novedades-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .novedades-grid .novedad-item {
+        padding: 12px;
+    }
+
+    .novedades-grid .novedad-item h3 {
+        font-size: 1.1rem; /* Reducimos aún más en pantallas pequeñas */
+        margin-bottom: 0; /* Ajustamos márgenes */
+        padding: 8px;
+    }
+
+    .novedades-grid .novedad-item .fecha-novedad {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+        top: 5px;
+        left: 5px;
+    }
+
+    .evento-item {
+        width: calc(100% - 30px);
+        margin-right: 15px;
+        padding: 12px;
+    }
+
+    .eventos-proximos .carousel-control {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .eventos-proximos .carousel-control.prev {
+        left: 5px;
+    }
+
+    .eventos-proximos .carousel-control.next {
+        right: 5px;
+    }
+
+    .evento-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .evento-item p {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+
+    .evento-item a {
+        font-size: 0.95rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header img {
+        height: 140px;
+        margin-bottom: 20px;
+    }
+
+    .correo-header {
+        font-size: 0.95rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav#mainNav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 20px 10px;
+    }
+
+    nav#mainNav {
+        padding: 10px;
+    }
+
+    nav#mainNav ul {
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    .novedades-grid .novedad-item h3 {
+        font-size: 1rem; /* Ajustamos aún más en pantallas más pequeñas */
+        padding: 5px;
+    }
+
+    .novedades-grid .novedad-item .fecha-novedad {
+        font-size: 0.6rem;
+        padding: 3px 5px;
+        top: 3px;
+        left: 3px;
+    }
+
+    .novedad-item,
+    .evento-item {
+        padding: 10px;
+    }
+
+    .novedad-item p,
+    .evento-item p {
+        font-size: 0.9rem;
+    }
+
+    .evento-item h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Estilos de transición de aparición (mantener si los usas) */
+.novedades h2,
+.novedades-grid .novedad-item,
+.eventos-proximos h2,
+.evento-item {
+    opacity: 0;
+    transform: translateY(20px); /* O la transformación que desees */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.novedades h2.visible,
+.novedades-grid .novedad-item.visible,
+.eventos-proximos h2.visible,
+.evento-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.resaltar-azul {
+    color: var(--color-azul);
+    font-weight: bold;
+}
+/* Estilo para la animación de semi-agrandamiento de las novedades */
+.novedades-grid .novedad-item:hover {
+    transform: scale(1.03); /* Ajusta el valor de escala a tu preferencia (usé 1.03 como en tu estilo anterior) */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Ajusta la sombra a tu preferencia (usé la de tu estilo anterior) */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Asegura una transición suave */
+}
+.volver-atras {
+    display: inline-flex; /* Para alinear el icono y el texto verticalmente */
+    align-items: center; /* Centra verticalmente el icono y el texto */
+    gap: 8px; /* Espacio entre el icono y el texto */
+    color: var(--color-azul); /* Usa tu color azul primario */
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+}    
+/* Estilos para el lightbox */
+.lightbox {
+    position: fixed; /* Se mantiene fijo en la ventana */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    display: none; /* Inicialmente oculto */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    z-index: 1000; /* Asegura que esté por encima de todo */
+}
+
+.lightbox img#imagen-lightbox {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor */
+}
+
+.cerrar-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #f1f1f1;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cerrar-lightbox:hover,
+.cerrar-lightbox:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Estilos para las flechas de navegación del lightbox */
+.lightbox-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #f1f1f1;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 5px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    z-index: 1001; /* Asegura que estén por encima de la imagen */
+    cursor: pointer;
+}
+
+.lightbox-control:hover,
+.lightbox-control:focus {
+    opacity: 1;
+    color: white;
+}
+
+.lightbox-control.prev {
+    left: 20px;
+}
+
+.lightbox-control.next {
+    right: 20px;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MUV - Modelos de Notas</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesnotas.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="mailto:muvagrupacionvete@gmail.com" class="correo-header">
+            <i class="fas fa-envelope"></i>
+            <span class="correo-texto">muvagrupacionvete@gmail.com</span>
+        </a>
+        <img src="https://i.postimg.cc/qvq6bhq2/Chat-GPT-Image-23-abr-2025-01-02-02.png" alt="Logo MUV">
+        <h1>MUV - Movimiento Universitario de Veterinaria</h1>
+    </header>
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="recursos.html"><i class="fas fa-folder-open"></i> Recursos</a></li>
+
+        </ul>
+    </nav>
+
+    <hr>
+
+    <section id="notas" class="notas-section">
+        <h2>Modelos de Notas</h2>
+
+        <div class="notas-categoria">
+            <h3 onclick="toggleNotas(this)">Readmisiones<i class="fas fa-chevron-down arrow-icon"></i></h3>
+            <div class="notas-contenido">
+                <p>Acá tenes los modelos de nota</p>
+                <ul>
+                    <li><a href="#">Solicitud de 3° Readmisión</a></li>
+                    <li><a href="#">Solicitud Mixta de Eximición y Conceder 3° Readmisión (Por trabajo)</a></li>
+                    <li><a href="#">Solicitud Mixta de Eximición y Conceder 3° Readmisión (Por salud)</a></li>
+                    <li><a href="#">Eximición al Art 2° del Régimen de Regularidad (Por trabajo)</a></li>
+                    <li><a href="#">Eximición al Art 2° del Régimen de Regularidad (Por salud)</a></li>
+                    <li><a href="#">Eximición a la 1° Readmisión</a></li>
+                    <li><a href="#">Eximición a la 2° Readmisión</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="notas-categoria">
+            <h3 onclick="toggleNotas(this)">Notas de Agradecimiento <i class="fas fa-chevron-down arrow-icon"></i></h3>
+            <div class="notas-contenido">
+                <ul>
+                    <li><a href="#">Modelo de Agradecimiento por Apoyo</a></li>
+                    <li><a href="#">Modelo de Agradecimiento por Invitación</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="notas-categoria">
+            <h3 onclick="toggleNotas(this)">Notas de Justificación <i class="fas fa-chevron-down arrow-icon"></i></h3>
+            <div class="notas-contenido">
+                <ul>
+                    <li><a href="#">Modelo de Justificación de Ausencia</a></li>
+                    <li><a href="#">Modelo de Justificación de Retraso</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        &copy; 2025 MUV - Movimiento Universitario de Veterinaria. Todos los derechos reservados.
+    </footer>
+
+
+    <script src="js/scriptnotas.js"></script>
+
+</body>
+
+</html>

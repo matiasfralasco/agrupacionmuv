@@ -1,0 +1,324 @@
+:root {
+    --color-azul-claro: #a3d1ff;
+    --color-azul: #1e3a8a;
+    --color-azul-oscuro: #0f172a;
+    --color-fondo: #f0f8ff;
+    --color-texto: #1e293b;
+    --color-acento: #5cb85c;
+    --transicion-normal: 0.3s ease-in-out;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color var(--transicion-normal), color var(--transicion-normal);
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, var(--color-azul), var(--color-azul-claro));
+    padding: 30px 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background var(--transicion-normal);
+}
+
+header h1 {
+    margin: 15px 0 0;
+    font-size: 2.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    transition: color var(--transicion-normal);
+}
+
+header img {
+    height: 200px;
+    margin-bottom: 40px;
+    transition: transform var(--transicion-normal);
+}
+
+header img:hover {
+    transform: scale(1.05);
+}
+
+.correo-header {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: white;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: color var(--transicion-normal);
+}
+
+.correo-header:hover {
+    color: var(--color-azul-claro);
+}
+
+.correo-texto {
+    text-decoration: underline;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: var(--color-azul-oscuro);
+    color: white;
+    padding: 15px 20px;
+    z-index: 100;
+    transition: background-color var(--transicion-normal), box-shadow var(--transicion-normal);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color var(--transicion-normal);
+}
+
+nav a:hover {
+    color: var(--color-azul-claro);
+}
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Styles */
+section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    color: var(--color-azul);
+    font-size: 2rem; /* Ajusté a un valor más consistente */
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--color-azul-claro);
+    padding-bottom: 8px;
+    transition: color var(--transicion-normal), border-color var(--transicion-normal);
+}
+
+/* Footer Style */
+footer {
+    background-color: var(--color-azul-oscuro);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 70px;
+    font-size: 0.9rem;
+    transition: background-color var(--transicion-normal), color var(--transicion-normal);
+}
+
+/* Separator */
+hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, var(--color-azul-claro), var(--color-azul));
+    margin: 40px auto;
+    width: 80%;
+    border-radius: 5px;
+}
+
+/* Notas Section Styles */
+.notas-section h2 {
+    font-size: 2rem; /* Hereda el tamaño del h2 general de la sección */
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--color-azul-claro);
+    padding-bottom: 10px;
+}
+
+.notas-categoria {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.notas-categoria h3 {
+    color: var(--color-azul-oscuro);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notas-categoria p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.notas-categoria ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.notas-categoria li {
+    margin-bottom: 8px;
+}
+
+/* Links within Notas Section */
+.notas-section a,
+.notas-contenido a {
+    color: var(--color-azul); /* Establece el color azul por defecto */
+    text-decoration: none;
+    transition: color var(--transicion-normal);
+}
+
+.notas-section a:hover,
+.notas-contenido a:hover {
+    text-decoration: underline;
+    color: var(--color-azul-claro);
+}
+
+/* Notas Content Styles */
+.notas-contenido {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    padding-left: 20px;
+}
+
+.notas-contenido.expanded {
+    max-height: 500px; /* O un valor adecuado para tu contenido */
+    overflow-y: auto; /* Habilitar el scroll vertical cuando se expanda */
+}
+
+.notas-contenido ul {
+    padding-left: 0;
+    margin-bottom: 10px;
+    list-style: disc;
+}
+
+.notas-contenido li {
+    margin-bottom: 5px;
+}
+
+/* Arrow Icon Style */
+.arrow-icon {
+    font-size: 0.8em;
+    transition: transform 0.3s ease-in-out;
+}
+
+.notas-categoria h3.active .arrow-icon {
+    transform: rotate(180deg);
+}
+
+/* Responsive: Pantallas hasta 768px (tablets y móviles) */
+@media (max-width: 768px) {
+    header img {
+        height: 140px;
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .correo-header {
+        font-size: 0.95rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    section {
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .notas-categoria h3 {
+        font-size: 1.3rem;
+    }
+
+    .notas-contenido {
+        font-size: 0.95rem;
+        padding-left: 10px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 20px 10px;
+    }
+
+    hr {
+        width: 90%;
+    }
+}
+
+/* Responsive: Pantallas muy pequeñas (hasta 480px, móviles chicos) */
+@media (max-width: 480px) {
+    header {
+        padding: 20px 10px;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    .notas-categoria {
+        padding: 10px;
+    }
+
+    .notas-categoria p,
+    .notas-categoria li {
+        font-size: 0.95rem;
+    }
+
+    .arrow-icon {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,638 @@
+:root {
+    --color-azul-claro: #a3d1ff;
+    --color-azul: #1e3a8a;
+    --color-azul-oscuro: #0f172a;
+    --color-fondo: #f0f8ff;
+    --color-texto: #1e293b;
+    --color-acento: #5cb85c;
+    --transicion-normal: 0.3s ease-in-out;
+}
+
+/* Estilos Generales */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color var(--transicion-normal), color var(--transicion-normal);
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, var(--color-azul-claro), var(--color-azul));
+    margin: 40px auto;
+    width: 80%;
+    border-radius: 5px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, var(--color-azul), var(--color-azul-claro));
+    padding: 30px 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background var(--transicion-normal);
+}
+
+header h1 {
+    margin: 15px 0 0;
+    font-size: 2.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    transition: color var(--transicion-normal);
+}
+
+header img {
+    height: 200px;
+    margin-bottom: 40px;
+    transition: transform var(--transicion-normal);
+}
+
+header img:hover {
+    transform: scale(1.05);
+}
+
+.correo-header {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: white;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: color var(--transicion-normal);
+}
+
+.correo-header:hover {
+    color: var(--color-azul-claro);
+}
+
+.correo-texto {
+    text-decoration: underline;
+}
+
+/* Navigation Styles */
+nav#mainNav {
+    background-color: var(--color-azul-oscuro);
+    color: white;
+    padding: 15px 20px;
+    z-index: 100;
+    transition: background-color var(--transicion-normal), box-shadow var(--transicion-normal);
+    position: relative;
+}
+
+nav#mainNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav#mainNav a {
+    color: white;
+    text-decoration: none;
+    transition: color var(--transicion-normal);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+nav#mainNav a:hover {
+    color: var(--color-azul-claro);
+}
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Menú desplegable "Más" */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown-arrow {
+    transition: transform 0.3s ease-in-out;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-azul);
+    color: white;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+    width: 150px;
+    text-align: left;
+    flex-direction: column;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 0.9rem; /* Tamaño ligeramente menor */
+}
+
+nav#mainNav .dropdown .dropdown-menu li a:hover {
+    background-color: var(--color-azul-claro);
+    color: var(--color-azul-oscuro);
+}
+
+.dropdown-toggle.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Section Styles */
+section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    color: var(--color-azul);
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--color-azul-claro);
+    padding-bottom: 8px;
+    transition: color var(--transicion-normal), border-color var(--transicion-normal);
+}
+
+
+
+/* Quienes Somos Section */
+.quienes-somos p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    transition: color var(--transicion-normal);
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-top: 60px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+
+.faq-item h3 {
+    color: var(--color-azul);
+    font-size: 1.5rem;
+    margin-top: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-item h3::after {
+    content: '\f078'; /* Código Unicode para fa-chevron-down */
+    font-family: 'Font Awesome 5 Free'; /* O la familia de fuentes que estés usando para FA */
+    font-weight: 900; /* Para el estilo sólido */
+    font-size: 1.2rem; /* Ajusta el tamaño según necesites */
+    transition: transform 0.3s ease-in-out;
+}
+
+.faq-item h3.active::after {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 10px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-in-out;
+}
+
+.faq-answer.open {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* Video MUV Section */
+.video-muv {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: background-color var(--transicion-normal), box-shadow var(--transicion-normal);
+}
+
+.video-muv h2 {
+    color: var(--color-azul);
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--color-azul-claro);
+    padding-bottom: 8px;
+    transition: color var(--transicion-normal), border-color var(--transicion-normal);
+}
+
+.video-muv video {
+    max-width: 100%;
+    width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow var(--transicion-normal);
+}
+
+/* Contacto Section */
+.contacto {
+    text-align: center;
+    margin-top: 70px;
+    padding-bottom: 30px;
+    transition: color var(--transicion-normal);
+}
+
+.contacto h2 {
+    color: var(--color-azul);
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--color-azul-claro);
+    padding-bottom: 8px;
+    transition: color var(--transicion-normal), border-color var(--transicion-normal);
+}
+
+.redes {
+    margin-top: 20px;
+    transition: color var(--transicion-normal);
+}
+
+.redes a {
+    color: var(--color-negro);
+    margin: 0 20px;
+    font-size: 2.5rem;
+    text-decoration: none;
+    transition: color var(--transicion-normal), transform var(--transicion-normal);
+}
+
+.redes a.instagram:hover {
+    color: #E1306C; /* Color rosado de Instagram (aproximado) */
+}
+
+.redes a.facebook:hover {
+    color: #1877F2; /* Color azul de Facebook */
+}
+
+.redes a.whatsapp:hover {
+    color: #25D366; /* Color verde de WhatsApp */
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-azul-oscuro);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 70px;
+    font-size: 0.9rem;
+    transition: background-color var(--transicion-normal), color var(--transicion-normal);
+}
+
+/* Nuestro Equipo Carousel */
+.nuestro-equipo {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 0 30px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.nuestro-equipo.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nuestro-equipo h2 {
+    color: var(--color-azul);
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--color-azul-claro);
+    padding-bottom: 8px;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: white;
+    padding: 20px;
+}
+
+.carousel-slide {
+    display: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    display: block;
+    opacity: 1;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-azul);
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    color: var(--color-acento);
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.team-member-info {
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.team-member-info.active-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.member-name {
+    font-size: 1.2rem;
+    color: var(--color-azul-oscuro);
+    font-weight: bold;
+}
+
+.member-title {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Nuestro Equipo Grid */
+.equipo-muv {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    text-align: center;
+}
+
+.equipo-muv.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.equipo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.miembro {
+    width: 200px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+/* Enlaces Principales */
+.enlaces-principales {
+    text-align: left;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding-left: 30px;
+}
+
+.enlaces-principales h2 {
+    color: var(--color-azul);
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--color-azul-claro);
+    padding-bottom: 10px;
+}
+
+.boton-recursos,
+.boton-novedades {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--color-azul);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: 10px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.boton-recursos:hover,
+.boton-novedades:hover {
+    background-color: var(--color-azul-oscuro);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* OPTIMIZACIÓN PARA MÓVILES */
+@media (max-width: 768px) {
+    header img {
+        height: 150px;
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .correo-header {
+        font-size: 0.9rem;
+        top: 10px;
+        left: 10px;
+    }
+
+    nav#mainNav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: flex;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown-toggle {
+        justify-content: center;
+    }
+
+    section {
+        padding: 0 15px;
+    }
+
+    section h2,
+    .video-muv h2,
+    .contacto h2,
+    .nuestro-equipo h2,
+    .equipo-muv h2,
+    .enlaces-principales h2 {
+        font-size: 1.8rem;
+    }
+
+    .faq-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .faq-answer {
+        font-size: 1rem;
+    }
+
+    .carousel-container {
+        padding: 10px;
+    }
+
+    .prev-button,
+    .next-button {
+        font-size: 1.5rem;
+        padding: 5px;
+    }
+
+    .member-name {
+        font-size: 1rem;
+    }
+
+    .member-title {
+        font-size: 0.8rem;
+    }
+
+    .miembro {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .boton-recursos,
+    .boton-novedades {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    .redes a {
+        font-size: 2rem;
+        margin: 0 10px;
+    }
+}
+
+/* DETECCIÓN DE TOQUE PARA ABRIR DROPDOWN EN MÓVIL */
+@media (pointer: coarse) {
+    .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown-toggle.open + .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+}
+.contacto-mensaje {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
