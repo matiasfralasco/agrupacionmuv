@@ -518,121 +518,216 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* OPTIMIZACIÓN PARA MÓVILES */
-@media (max-width: 768px) {
+/* [Todo el contenido original hasta el final del archivo se mantiene igual] */
+
+/* =============================================== */
+/* OPTIMIZACIÓN ESPECÍFICA PARA MOTOROLA G9 PLAY */
+/* =============================================== */
+
+@media (max-width: 480px) {
+    /* Ajustes generales */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Header */
+    header {
+        padding: 15px 10px;
+    }
+    
     header img {
-        height: 150px;
-        margin-bottom: 20px;
+        height: 100px;
+        margin-bottom: 15px;
     }
-
+    
     header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin: 10px 0 0;
     }
-
+    
     .correo-header {
         font-size: 0.9rem;
         top: 10px;
         left: 10px;
+        gap: 5px;
     }
 
+    /* Navegación */
+    nav#mainNav {
+        padding: 10px 5px;
+        position: sticky;
+        top: 0;
+    }
+    
     nav#mainNav ul {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;  /* Cambiado de column a row */
+        flex-wrap: wrap; /* Agregado para permitir el ajuste de línea */
+        gap: 8px;
         align-items: center;
     }
+    
+    nav#mainNav a {
+        font-size: 1rem;
+        padding: 8px 0;
+        width: auto; /* Para que el ancho se ajuste al contenido */
+        flex-grow: 1; /* Para que los elementos se distribuyan en la línea */
+        text-align: center; /* Centrar el texto */
+    }
 
+    /* Dropdown "Más" optimizado */
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .dropdown-toggle {
+        padding: 10px 15px;
+        justify-content: center;
+        font-size: 1rem;
+    }
+    
     .dropdown-menu {
         position: static;
-        transform: none;
+        width: 100% !important;
         opacity: 1 !important;
         visibility: visible !important;
         display: none;
+        transform: none !important;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 5px;
     }
-
-    .dropdown.open .dropdown-menu {
+    
+    .dropdown-menu.open {
         display: flex;
     }
-
-    .dropdown:hover .dropdown-menu {
-        display: none;
+    
+    .dropdown-menu li a {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+        text-align: center;
+    }
+    
+    .dropdown-arrow {
+        margin-left: 8px;
     }
 
-    .dropdown-toggle {
-        justify-content: center;
-    }
-
+    /* Secciones */
     section {
         padding: 0 15px;
+        margin: 30px auto;
     }
-
-    section h2,
-    .video-muv h2,
-    .contacto h2,
-    .nuestro-equipo h2,
-    .equipo-muv h2,
-    .enlaces-principales h2 {
-        font-size: 1.8rem;
-    }
-
-    .faq-item h3 {
-        font-size: 1.2rem;
-    }
-
-    .faq-answer {
-        font-size: 1rem;
-    }
-
-    .carousel-container {
-        padding: 10px;
-    }
-
-    .prev-button,
-    .next-button {
+    
+    section h2 {
         font-size: 1.5rem;
-        padding: 5px;
+        padding-bottom: 6px;
+        margin-bottom: 12px;
     }
 
-    .member-name {
-        font-size: 1rem;
+    /* FAQ */
+    .faq-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .faq-answer {
+        font-size: 0.95rem;
     }
 
-    .member-title {
-        font-size: 0.8rem;
+    /* Video */
+    .video-muv {
+        padding: 15px;
+    }
+    
+    .video-muv video {
+        width: 100%;
+        height: auto;
     }
 
+    /* Equipo */
     .miembro {
         width: 100%;
-        max-width: 300px;
+        margin-bottom: 20px;
     }
 
-    .boton-recursos,
+    /* Botones */
+    .boton-recursos, 
     .boton-novedades {
-        font-size: 0.9rem;
-        padding: 10px 20px;
+        display: block;
+        width: 100%;
+        margin: 0 0 10px 0;
+        padding: 14px 20px;
+        font-size: 1rem;
     }
 
+    /* Redes sociales */
+    .redes {
+        margin-top: 15px;
+    }
+    
     .redes a {
         font-size: 2rem;
         margin: 0 10px;
     }
+
+    /* Footer */
+    footer {
+        padding: 20px 10px;
+        font-size: 0.85rem;
+    }
+
+    /* Ajustes específicos para mejor tacto */
+    a, button, [onclick] {
+        min-height: 44px; /* Tamaño mínimo para áreas táctiles */
+    }
 }
 
-/* DETECCIÓN DE TOQUE PARA ABRIR DROPDOWN EN MÓVIL */
+/* Optimización adicional para dispositivos táctiles */
 @media (pointer: coarse) {
     .dropdown-menu {
-        display: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
     }
-
-    .dropdown-toggle.open + .dropdown-menu {
-        display: flex;
-        flex-direction: column;
+    
+    .dropdown-menu.open {
+        max-height: 500px;
     }
-
+    
     .dropdown:hover .dropdown-menu {
         display: none;
     }
+    
+    /* Mejorar la legibilidad en pantallas pequeñas */
+    p, li {
+        line-height: 1.6;
+    }
+    
+    /* Ajustar márgenes para pantallas pequeñas */
+    section {
+        margin: 25px auto;
+    }
+    
+    hr {
+        margin: 30px auto;
+    }
 }
-.contacto-mensaje {
-    margin-top: 20px;
-    font-size: 0.9rem;
+
+/* Ajustes específicos para resolución del Motorola G9 Play */
+@media (max-width: 480px) and (max-height: 854px) {
+    header img {
+        height: 90px;
+    }
+    
+    header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .dropdown-toggle {
+        padding: 12px 15px;
+    }
+    
+    .faq-item h3 {
+        font-size: 1.05rem;
+    }
 }
