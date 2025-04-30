@@ -27,8 +27,156 @@ hr {
     width: 80%;
     border-radius: 5px;
 }
+/* Estilos para el modo oscuro */
+body.dark-mode .carousel-container {
+    background-color: #242424;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}
 
+body.dark-mode .carousel-container .team-member-info {
+    background-color: #333333;
+    color: #d4d4d4;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .carousel-container .team-member-info h3,
+body.dark-mode .carousel-container .team-member-info p {
+    color: #d4d4d4;
+}
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header.dark-mode {
+    background: linear-gradient(to right, #0f172a, #1e3a8a);
+    color: #ffffff;
+}
+
+header.dark-mode h1 {
+    color: #ffffff;
+}
+
+nav#mainNav.dark-mode {
+    background-color: #242424;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+nav#mainNav.dark-mode a {
+    color: #a3d1ff;
+}
+
+section.dark-mode h2 {
+    color: #a3d1ff;
+    border-bottom-color: #5cb85c;
+}
+
+.quienes-somos.dark-mode p {
+    color: #d4d4d4;
+}
+
+.faq-item.dark-mode {
+    border-bottom-color: #555;
+}
+
+.faq-item.dark-mode h3 {
+    color: #a3d1ff;
+}
+
+.faq-answer.dark-mode {
+    color: #d4d4d4;
+}
+
+.video-muv.dark-mode {
+    background-color: #242424;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}
+
+.video-muv.dark-mode h2 {
+    color: #a3d1ff;
+    border-bottom-color: #5cb85c;
+}
+
+.contacto.dark-mode {
+    color: #ffffff;
+}
+
+.contacto.dark-mode h2 {
+    color: #a3d1ff;
+    border-bottom-color: #5cb85c;
+}
+
+.redes.dark-mode a {
+    color: #ffffff;
+}
+
+footer.dark-mode {
+    background-color: #0f172a;
+    color: #d4d4d4;
+}
+
+.carousel-container.dark-mode {
+    background-color: #242424;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}
+
+.miembro.dark-mode {
+    background-color: #242424;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.enlaces-principales.dark-mode h2 {
+    color: #a3d1ff;
+    border-bottom-color: #5cb85c;
+}
+.carousel-container.dark-mode .team-member-info {
+    background-color: #333333; /* Un grisáceo oscuro */
+    color: #d4d4d4; /* Ajustar el color del texto para contraste */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Ajustar la sombra para el fondo oscuro */
+}
+
+.carousel-container.dark-mode .team-member-info h3,
+.carousel-container.dark-mode .team-member-info p {
+    color: #d4d4d4; /* Asegurarnos de que el texto sea legible */
+}
 /* Header Styles */
+#dark-mode-toggle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.boton-modo-oscuro {
+    background-color: var(--color-azul); /* Color azul */
+    color: white;
+    padding: 10px 15px;
+}
+
+.boton-modo-oscuro:hover {
+    background-color: var(--color-azul-claro); /* Color azul claro al pasar el mouse */
+    color: var(--color-azul-oscuro);
+}
+
+#dark-mode-toggle i {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 480px) {
+    #dark-mode-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
 header {
     background: linear-gradient(to right, var(--color-azul), var(--color-azul-claro));
     padding: 30px 20px;
