@@ -14,6 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/stylesrecursos.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2698131720505645"
      crossorigin="anonymous"></script>
      <!-- Google tag (gtag.js) -->
@@ -36,6 +37,11 @@
         </a>
         <img src="https://i.postimg.cc/qvq6bhq2/Chat-GPT-Image-23-abr-2025-01-02-02.png" alt="Logo MUV">
         <h1>MUV - Movimiento Universitario de Veterinaria</h1>
+        <button id="dark-mode-toggle" class="boton-modo-oscuro" aria-label="Alternar modo oscuro">
+            <i class="fas fa-moon" id="dark-mode-icon"></i>
+            <i class="fas fa-sun" id="light-mode-icon"></i>
+            <span id="dark-mode-text">Modo Oscuro</span>
+        </button>
     </header>
     <nav id="mainNav">
         <ul>
@@ -46,7 +52,7 @@
 
     <hr>
 
-    <section id="recursos" class="recursos-section">
+    <section id="recursos" class="recursos-section recursos-page">
         <h2>Recursos para Estudiantes</h2>
 
         <div class="recursos-item">
@@ -159,7 +165,7 @@
 
     </section>
 
-    <section class="materias-por-anio-section">
+    <section class="materias-por-anio-section recursos-page">
         <h2>Programas de Materias por Año</h2>
         <p>Acá podés descargar los programas de las materias para que puedas imprimir si así lo deseás</p>
         <div class="materias-anio-contenedor">
@@ -333,6 +339,7 @@
         });
     </script>
     <script src="js/scriptrecursos.js"></script>
+    <script src="js/dark-mode.js"></script>
 
 </body>
 

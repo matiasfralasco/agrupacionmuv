@@ -1,0 +1,316 @@
+#dark-mode-toggle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.boton-modo-oscuro {
+    background-color: var(--color-azul); /* Color azul */
+    color: white;
+    padding: 10px 15px;
+}
+
+.boton-modo-oscuro:hover {
+    background-color: var(--color-azul-claro); /* Color azul claro al pasar el mouse */
+    color: var(--color-azul-oscuro);
+}
+
+#dark-mode-toggle i {
+    font-size: 1.2rem;
+}
+
+#light-mode-icon {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    #dark-mode-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilos para el modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header.dark-mode {
+    background: linear-gradient(to right, #0f172a, #1e3a8a);
+    color: #ffffff;
+}
+
+header.dark-mode h1 {
+    color: #ffffff;
+}
+
+nav#mainNav.dark-mode {
+    background-color: #242424;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+nav#mainNav.dark-mode a {
+    color: #a3d1ff;
+}
+
+section.dark-mode h2 {
+    color: #a3d1ff;
+    border-bottom-color: #5cb85c;
+}
+
+.quienes-somos.dark-mode p {
+    color: #d4d4d4;
+}
+
+.faq-item.dark-mode {
+    border-bottom-color: #555;
+}
+
+.faq-item.dark-mode h3 {
+    color: #a3d1ff;
+}
+
+.faq-answer.dark-mode {
+    color: #d4d4d4;
+}
+
+.video-muv.dark-mode {
+    background-color: #242424;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}
+
+.video-muv.dark-mode h2 {
+    color: #a3d1ff;
+    border-bottom-color: #5cb85c;
+}
+
+.contacto.dark-mode {
+    color: #ffffff;
+}
+
+.contacto.dark-mode h2 {
+    color: #a3d1ff;
+    border-bottom-color: #5cb85c;
+}
+
+.redes.dark-mode a {
+    color: #ffffff;
+}
+
+footer.dark-mode {
+    background-color: #0f172a;
+    color: #d4d4d4;
+}
+
+.carousel-container.dark-mode {
+    background-color: #242424;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}
+
+.miembro.dark-mode {
+    background-color: #242424;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.enlaces-principales.dark-mode h2 {
+    color: #a3d1ff;
+    border-bottom-color: #5cb85c;
+}
+
+.carousel-container.dark-mode .team-member-info {
+    background-color: #333333;
+    color: #d4d4d4;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.carousel-container.dark-mode .team-member-info h3,
+.carousel-container.dark-mode .team-member-info p {
+    color: #d4d4d4;
+}
+
+/* Estilos para el modo oscuro en notas.html */
+
+body.dark-mode .notas-section h2 {  /* Título principal sección */
+    color: #1e3a8a; /* Color azul claro (como en otras secciones) */
+    /* Usaremos el hr general para la línea */
+}
+
+body.dark-mode .notas-section hr {
+    background: linear-gradient(to right, #a3d1ff, #1e3a8a); /* Mismo gradiente que el hr normal */
+}
+
+body.dark-mode .notas-section .notas-categoria h3 { /* Títulos de categoría */
+    color: #d4d4d4; /* Un gris más claro para mejor legibilidad */
+}
+
+body.dark-mode .notas-section .notas-contenido { /* Contenedor de enlaces */
+    background-color: #242424;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .notas-section .notas-contenido a { /* Enlaces */
+    color: #ffffff;  /* Blanco para buen contraste */
+}
+
+body.dark-mode .notas-section .notas-contenido a:hover {
+    color: #a3d1ff;  /* Azul claro al pasar el mouse */
+}
+/* Si tienes otros elementos específicos en notas.html que necesiten ajuste, agrégalos aquí usando la misma especificidad */
+
+/* Estilos para el modo oscuro en novedades.html */
+
+body.dark-mode .novedades-page h2 { /* Títulos de sección */
+    color: #a3d1ff;
+    /* La línea se manejará con el hr general */
+}
+
+body.dark-mode .novedades-page hr {
+    background: linear-gradient(to right, #a3d1ff, #1e3a8a); /* Mismo gradiente que el hr normal */
+}
+
+body.dark-mode .novedades-page .novedad-item { /* Cada item de novedad */
+    background-color: #242424;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .novedades-page .novedad-item a { /* Enlaces de novedad */
+    color: #ffffff;
+}
+
+body.dark-mode .novedades-page .novedad-item a:hover {
+    color: #a3d1ff;
+}
+
+body.dark-mode .novedades-page .fecha-novedad { /* Fecha de la novedad */
+    color: #d4d4d4;
+}
+
+body.dark-mode .novedades-page .evento-item { /* Cada item de evento */
+    background-color: #242424;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .novedades-page .evento-item h3 { /* Título del evento */
+    color: #a3d1ff;
+}
+
+body.dark-mode .novedades-page .evento-item p { /* Descripción del evento */
+    color: #d4d4d4;
+}
+
+body.dark-mode .novedades-page .evento-item a { /* Enlace del evento */
+    color: #ffffff;
+}
+
+body.dark-mode .novedades-page .evento-item a:hover {
+    color: #a3d1ff;
+}
+/* Estilos para el modo oscuro en recursos.html (Refinado) */
+
+body.dark-mode .recursos-page h2 {
+    color: #a3d1ff;
+}
+
+body.dark-mode .recursos-page hr {
+    background: linear-gradient(to right, #a3d1ff, #1e3a8a);
+}
+
+body.dark-mode .recursos-page .recursos-item {
+    background-color: #242424;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    color: #d4d4d4;
+}
+
+body.dark-mode .recursos-page .recursos-item h3 {
+    color: #a3d1ff;
+}
+
+body.dark-mode .recursos-page .recursos-item a {
+    color: #ffffff;
+}
+
+body.dark-mode .recursos-page .recursos-item a:hover {
+    color: #a3d1ff;
+}
+
+/* Estilos específicos para "Información Académica"  */
+body.dark-mode .recursos-page .recursos-item:nth-child(2) { /* Selecciona el 2do .recursos-item */
+    /* Opcional:  Si quieres un estilo diferente para este item */
+}
+
+body.dark-mode .recursos-page .recursos-item:nth-child(2) h4 {
+    color: #d4d4d4; /* Color para "Plan de Estudios", "Normativas" */
+}
+
+body.dark-mode .recursos-page .recursos-item:nth-child(2) .reglamento-contenido {
+    background-color: #333333;
+    border-top: 1px solid #555;
+}
+
+body.dark-mode .recursos-page .recursos-item:nth-child(2) .reglamento-contenido a {
+    color: #ffffff;
+}
+
+body.dark-mode .recursos-page .recursos-item:nth-child(2) .reglamento-contenido a:hover {
+    color: #a3d1ff;
+}
+
+/* Estilos específicos para "Servicios para Estudiantes"  */
+body.dark-mode .recursos-page .recursos-item:nth-child(3) h4 {
+    color: #d4d4d4;
+}
+
+body.dark-mode .recursos-page .recursos-item:nth-child(3) .reglamento-contenido {
+    background-color: #333333;
+    border-top: 1px solid #555;
+}
+
+body.dark-mode .recursos-page .recursos-item:nth-child(3) .reglamento-contenido a {
+    color: #ffffff;
+}
+
+body.dark-mode .recursos-page .recursos-item:nth-child(3) .reglamento-contenido a:hover {
+    color: #a3d1ff;
+}
+
+/* CORRECCIÓN CRÍTICA:  AUMENTO DE ESPECIFICIDAD  */
+body.dark-mode .recursos-page .recursos-item:nth-child(3) .servicio-deportivo-contenido {
+    background-color: #333333;
+    border-top: 1px solid #555;
+}
+
+body.dark-mode .recursos-page .recursos-item:nth-child(3) .servicio-deportivo-contenido .imagen-ampliable img {
+    border: 2px solid #555;
+}
+body.dark-mode .recursos-page .materias-anio-contenedor {
+    background-color: #242424;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .recursos-page .materia-anio-item h4 {
+    color: #a3d1ff;
+}
+
+body.dark-mode .recursos-page .materia-anio-item .reglamento-contenido {
+    background-color: #333333;
+    border-top: 1px solid #555;
+}
+
+body.dark-mode .recursos-page .materia-anio-item .reglamento-contenido a {
+    color: #ffffff;
+}
+
+body.dark-mode .recursos-page .materia-anio-item .reglamento-contenido a:hover {
+    color: #a3d1ff;
+}
