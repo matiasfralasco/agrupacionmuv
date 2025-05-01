@@ -1,0 +1,26 @@
+[build]
+  publish = "."  # Publicar desde la raíz del proyecto
+
+[[headers]]
+  # Cachear todos los recursos estáticos (CSS, JS, fuentes) por 1 año
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  # No cachear archivos HTML
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "max-age=0, must-revalidate, public, no-cache"
+
+[[headers]]
+  # Cachear recursos de fuentes por 1 año (si no están en el mismo dominio)
+  for = "https://fonts.(googleapis|gstatic).com/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  # Cachear Font Awesome (si no está en el mismo dominio)
+  for = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
