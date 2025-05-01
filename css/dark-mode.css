@@ -285,9 +285,11 @@ body.dark-mode .recursos-page .recursos-item:nth-child(3) .reglamento-contenido 
 }
 
 /* CORRECCIÓN CRÍTICA:  AUMENTO DE ESPECIFICIDAD  */
-body.dark-mode .recursos-page .recursos-item:nth-child(3) .servicio-deportivo-contenido {
+body.dark-mode .recursos-page .recursos-item:nth-child(3) .servicio-deportivo-contenido,
+body.dark-mode .recursos-page .recursos-item:nth-child(3) .servicio-deportivo-contenido * { /* Aplica también a los hijos */
     background-color: #333333;
     border-top: 1px solid #555;
+    box-sizing: border-box; /* Asegura que el borde no afecte el tamaño total */
 }
 
 body.dark-mode .recursos-page .recursos-item:nth-child(3) .servicio-deportivo-contenido .imagen-ampliable img {
@@ -313,4 +315,19 @@ body.dark-mode .recursos-page .materia-anio-item .reglamento-contenido a {
 
 body.dark-mode .recursos-page .materia-anio-item .reglamento-contenido a:hover {
     color: #a3d1ff;
+}
+/* Añade esto al final de tu dark-mode.css */
+body.dark-mode .reglamento-item h4,
+body.dark-mode .servicio-deportivo-item h4 {
+    color: #d4d4d4 !important; /* Mismo color que "Plan de Estudios" */
+}
+
+body.dark-mode .reglamento-contenido,
+body.dark-mode .servicio-deportivo-contenido {
+    color: #d4d4d4 !important;
+}
+
+body.dark-mode .reglamento-contenido p,
+body.dark-mode .reglamento-contenido li {
+    color: #d4d4d4 !important;
 }
